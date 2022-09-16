@@ -2,16 +2,12 @@
 
 one:
   name: MyString
-  image: MyText
+  photo: MyString
   bio: MyText
-  updateAt: 2022-09-15 15:52:44
-  createAt: 2022-09-15 15:52:44
-  postsCounter: 1
+  posts_counter: 1
 
 two:
   name: MyString
-  image: MyText
+  photo: MyString
   bio: MyText
-  updateAt: 2022-09-15 15:52:44
-  createAt: 2022-09-15 15:52:44
-  postsCounter: 1
+  posts_counter: 1
