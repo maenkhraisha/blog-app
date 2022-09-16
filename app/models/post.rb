@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   end
 
   private
-  
+
   def recent_five_comments
     comments.last(5)
   end
