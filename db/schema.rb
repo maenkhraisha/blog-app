@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_16_152040) do
     t.bigint "author_id", null: false
     t.string "title"
     t.text "text"
-    t.integer "comment_counter"
+    t.integer "comments_counter"
     t.integer "likes_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
