@@ -8,7 +8,7 @@ RSpec.describe Comment, type: :model do
     subject { Comment.new }
     before { subject.save }
 
-    it 'Test if comments_counter is getting updated' do
+    it 'Test the comments_counter is updated' do
       first_post.comments_counter = 2
       subject.post = first_post
       expect(subject.post.comments_counter).to eq 2
