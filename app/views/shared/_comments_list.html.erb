@@ -1,6 +1,5 @@
-<div>
+<div class="container border border-dark">
     <% comments.each do |comment| %>
-        <p><%comment.author_id%>:</p>
-        <p><%comment.text%>:</p>
+        <p><%= user.name %> : <%= comment.text %></p>
     <% end %>
 </div>
