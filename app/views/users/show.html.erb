@@ -1,1 +1,20 @@
-<h1>show users</h1>
+
+   
+    <% maen = User.find(params[:id]) %>
+   
+    <div class="container m-5">
+        
+        <%= render "shared/user_card", user: maen %>
+        
+        <div class="border border-dark mt-3 mb-3">
+            <p class="small"><%= maen.bio%></p>
+        </div>
+
+        <%p = Post.where(author_id: params[:id])%>
+        <%p.each do |item| %>
+          <li><%= item.text %></li>
+        <% end %>
+
+        <a class="btn btn-outline-dark" href="<%= users_path %>">Back</a>
+    </div>
+   
