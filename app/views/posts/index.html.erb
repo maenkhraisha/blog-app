@@ -1,1 +1,19 @@
-<h1>Posts Index </h1>
+<% user = User.find(params[:user_id]) %>
+
+<div class="container m-5">
+        
+    <%= render "shared/user_card", user: user %>
+        
+    <% posts = Post.where(author_id: user.id) %>
+    
+
+    <% posts.each do |post| %>
+        <% comments = Comment.where(author_id: user.id , post_id: post.id) %>
+        <%= render "shared/post_card", post: post , user: user %> 
+        <%= render "shared/comments_list", comments: comments, user: user %> 
+    <% end %>
+
+    <a class="btn btn-outline-dark" href="<%= users_path %>">Back</a>
+    <a class="btn btn-outline-dark">Pagination</a>
+</div>
+

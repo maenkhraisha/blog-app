@@ -1,0 +1,16 @@
+<div class="d-flex gap-3">    
+    
+    <a href="<%= user_path(user) %>">
+    <img src="<%= user.photo %>" alt="user image" class="m2 border border-dark"/> 
+    </a>
+    
+    <div class="d-flex flex-row justify-content-between align-items-center border border-dark w-100 p-2">
+        <p class="h4"><%= user.name %></p>
+        <div class="d-flex gap-1 align-self-end">
+            <p class="small fw-bold">Number of posts:</p>
+            <p class="small fw-bold"><%= user.posts_counter %></p>
+        </div>       
+    </div>  
+
+</div>
+
