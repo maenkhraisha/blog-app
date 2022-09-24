@@ -13,10 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+/* 
  @import "bootstrap";
-
  
  .box-shadow{
     box-shadow: 10px 10px;
-}
+} */
