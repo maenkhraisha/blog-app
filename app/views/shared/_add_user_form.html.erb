@@ -1,0 +1,42 @@
+<%= form_with model: @user do |form| %>
+<div class="container border border-dark m-5 p-3 box-shadow">
+    <div>    
+
+        <div class="row">
+                <div class="col-3">
+                    <%= form.label :name %>
+                </div>
+
+                <div class="col-8">
+                    <%= form.text_field :name %>
+                </div>
+        </div> 
+
+        <div class="row">
+                <div class="col-3">
+                    <%= form.label :photo %>                    
+                </div>
+      
+                <div class="col-8">                 
+                    <%= form.text_field :photo %>
+                </div>
+        </div>   
+
+        <div class="row">  
+                <div class="col-3">
+                    <%= form.label :bio %>                    
+                </div>                
+
+                <div class="col-8">
+                    <%= form.text_area :bio %>
+                </div>
+        </div>   
+
+        <div class="row">    
+            <div class=col-3>            
+                <%= form.submit "Add User" %>                
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>

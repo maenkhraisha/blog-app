@@ -1,0 +1,32 @@
+ <%= form_with model: Post do |form| %> 
+<div class="container border border-dark m-5 p-3 box-shadow">
+    <div>    
+
+        <div class="row">
+                <div class="col-3">
+                    <%= form.label :title %>                    
+                </div>
+      
+                <div class="col-8">                 
+                    <%= form.text_field :title %>
+                </div>
+        </div>   
+
+        <div class="row">  
+                <div class="col-3">
+                    <%= form.label :text %>                    
+                </div>                
+
+                <div class="col-8">
+                    <%= form.text_area :text %>
+                </div>
+        </div>   
+
+        <div class="row">    
+            <div class=col-3>            
+                <%= form.submit "Add Post" %>                
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>

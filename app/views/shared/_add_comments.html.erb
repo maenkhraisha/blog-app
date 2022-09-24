@@ -1,0 +1,6 @@
+<%= form_with url: "/users/#{@post.author_id}/posts/#{@post.id}/comments", scope: :comment do |form| %>
+    <div class="d-flex flex-column" >
+        <%= form.text_area :text, placeholder: "Add comment...", rows: 5, required: true %>
+        <%= form.submit "Comment" %>
+    </div>
+<% end %>

@@ -9,6 +9,7 @@
         <p class="small"><%= user.bio %></p>
     </div>
 
+
     <% p = Post.where(author_id: user.id) %>
         
     <% p.each do |post| %>

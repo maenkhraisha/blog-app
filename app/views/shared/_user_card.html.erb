@@ -8,8 +8,16 @@
         <p class="h4"><%= user.name %></p>
         <div class="d-flex gap-1 align-self-end">
             <p class="small fw-bold">Number of posts:</p>
-            <p class="small fw-bold"><%= user.posts_counter %></p>
-        </div>       
+            <p class="small fw-bold"><%= user.posts_counter %></p>            
+        </div>               
+ 
+ 
+        <div>
+            <a class="btn btn-outline-dark" href="<%= new_post_path %>">Add Post</a>
+            <%= button_to "delete", user_path(:id => user.id), :method => :delete, class: "btn btn-outline-dark" %>
+        </div>
+
+       
     </div>  
 
 </div>

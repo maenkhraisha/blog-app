@@ -1,7 +1,28 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
   end
 
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+    @user = @post.author
+    @comments = @post.comments
+  end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @new_post = current_user.posts.new(post_params)
+    @new_post.save
+    puts '-------------------------------------------------------'
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text).with_defaults(comments_counter: 0, likes_counter: 0)
+  end
 end
