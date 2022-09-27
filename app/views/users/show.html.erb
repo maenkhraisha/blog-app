@@ -10,9 +10,9 @@
     </div>
 
 
-    <% p = Post.includes(:users).where(id: user.id) %>
+    <% p = Post.where(author_id: user.id) %>
 
-        
+         
     <% p.each do |post| %>
         <%= render "shared/post_card", post: post , user: user%> 
     <% end %>
