@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "users/index", type: :feature do
+RSpec.describe 'users/index', type: :feature do
   before(:each) do
-    @user1 = User.create(name: 'Nati', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'I am a software Engineer', posts_counter: 0)
+    @user1 = User.create(name: 'Nati', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                         bio: 'I am a software Engineer', posts_counter: 0)
     visit root_path
   end
   describe 'Testing User/index' do
