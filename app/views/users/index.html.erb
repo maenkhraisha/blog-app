@@ -1,7 +1,5 @@
 <div class="d-flex flex-column gap-3 m-5">
 
-
-
 <% User.all.each do |user| %>
     <%= render "shared/user_card", user: user %>   
 <% end %>

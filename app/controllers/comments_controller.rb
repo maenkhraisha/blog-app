@@ -10,8 +10,10 @@ class CommentsController < ApplicationController
       author_id: current_user.id,
       post_id: @post.id
     )
-    @comment.post_id = @post.id
+
     @comment.save
+
+    redirect_to user_path(params[:user_id])
   end
 
   private
