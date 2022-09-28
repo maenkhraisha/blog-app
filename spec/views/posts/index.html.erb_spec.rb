@@ -7,7 +7,7 @@ RSpec.describe 'posts/index', type: :feature do
     @second_post = Post.create(author: @first_user, title: 'post2', text: 'name', comments_counter: 0, likes_counter: 0)
     @third_post = Post.create(author: @first_user, title: 'post3', text: 'maen', comments_counter: 0, likes_counter: 0)
 
-    @first_comment = Comment.create(author_id: @first_user, post_id: @first_post, text:'this post is good')
+    @first_comment = Comment.create(author: @first_user, post: @first_post, text:'this post is good')
 
     visit user_posts_path(@first_user.id)
   end
@@ -32,19 +32,20 @@ RSpec.describe 'posts/index', type: :feature do
       expect(page).to have_content('my')
     end
     it 'I can see the first comments on a post' do
-      expect(page).to have_content('this post is good')
+      expect(page).to have_content 'Nati : this post is good'
     end
-    # it 'I can see how many comments a post has' do
-    #   expect(page).to have_content('Pagination')
-    # end
-    # it 'I can see how many likes a post has' do
-    #   expect(page).to have_content('Pagination')
-    # end
-    # it 'I can see a section for pagination if there are more posts than fit on the view' do
-    #   expect(page).to have_content('Pagination')
-    # end
-    # it 'When I click on a post, it redirects me to that post show page' do
-    #   expect(page).to have_content('Pagination')
-    # end
+    it 'I can see how many comments a post has' do
+      expect(page).to have_content('Comments No')
+    end
+    it 'I can see how many likes a post has' do
+      expect(page).to have_content('Likes No')
+    end
+    it 'I can see a section for pagination if there are more posts than fit on the view' do
+      expect(page).to have_content('Pagination')
+    end
+    it 'When I click on a post, it redirects me to that post show page' do
+      click_link @first_post.title
+      expect(page).to have_current_path user_post_path(@first_user, @first_post)
+    end
   end
 end
