@@ -3,8 +3,9 @@
 <% l = Like.where(author_id: user.id , post_id: post.id) %>
             
 <div class="border border-dark mt-1 mb-1">
-    <a href="<%= user_post_path(user.id,post.id) %>"><h4>Post #<%= post.id %></h4></a>
+    <a href="<%= user_post_path(user.id,post.id) %>"><h4><%= post.title %></h4></a>
     <%= post.text %>
+    <h6>Post Author : <%= user.name %></h6>
     <h6>Comments No : <%= c.length %></h6>
     <h6>Likes No : <%= l.length %></h6>
 </div>

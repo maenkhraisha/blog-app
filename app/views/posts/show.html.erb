@@ -2,7 +2,7 @@
     <% user = User.find(params[:user_id])  %>
     <% post_id = params[:id] %>
 
-    <% p = Post.where(id: post_id, author_id: user.id) %>
+    <% p = Post.where(id: post_id) %>
 
     <% p.each do |post| %>
         <%= render "shared/post_card", post: post , user: user%> 
@@ -14,6 +14,7 @@
 
     <div class="d-flex flex-column gap-3 mt-5 mb-5">
         <% comments = Comment.where(author_id: user.id , post_id: post_id) %>
+ 
         <h4>comments list</h4>        
         <%= render "shared/comments_list", comments: comments, user: user %> 
     </div>

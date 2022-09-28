@@ -10,8 +10,9 @@
     </div>
 
 
-    <% p = Post.where(author_id: user.id) %>
-        
+    <% p =  user.recent_three_posts %>
+
+         
     <% p.each do |post| %>
         <%= render "shared/post_card", post: post , user: user%> 
     <% end %>
