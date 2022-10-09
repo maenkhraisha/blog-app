@@ -4,7 +4,15 @@ require 'active_support/core_ext/integer/time'
 Rails.application.configure do
   
 
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => '1d6e423b0f15a4',
+    :password => 'c64768b8e00a2b',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
 
 
 
