@@ -15,7 +15,12 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
 
-    redirect_to users_path
+    UserMailer.with(user: @user).welcome_email.deliver_later
+
+    format.html { redirect_to(@user, notice: 'User was successfully created.') }
+    format.json { render json: @user, status: :created, location: @user }
+
+    # redirect_to users_path
   end
 
   def destroy
